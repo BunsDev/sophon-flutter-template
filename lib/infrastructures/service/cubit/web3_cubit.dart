@@ -85,6 +85,7 @@ class Web3Cubit extends Cubit<Web3State> {
 
   /// Get greeting from
   Future<void> fetchGreeting() async {
+    emit(FetchGreetingLoading());
     try {
       List<dynamic> response = await web3Client.call(
         contract: greeterContract,
